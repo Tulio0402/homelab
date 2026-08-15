@@ -1,0 +1,40 @@
+# ── 金鑰與憑證（絕對不能進版控）────────────────
+id_*
+!id_*.pub
+*.key
+*.pem
+*.p12
+*.pfx
+known_hosts
+
+# ── 環境變數與密碼 ────────────────────────────
+.env
+.env.*
+!.env.example
+secrets/
+*secret*
+*password*
+
+# ── 備份與資料 ────────────────────────────────
+*.tar.gz
+*.bak
+*.dump
+data/
+volumes/
+
+# ── 編輯器與系統產生的 ────────────────────────
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── 日誌 ──────────────────────────────────────
+*.log
+logs/
+
+# ── Ansible ──────────────────────────────────
+*.retry
+ansible/inventory/hosts.local
