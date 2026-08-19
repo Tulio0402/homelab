@@ -1,0 +1,28 @@
+services:
+  minecraft:
+    image: itzg/minecraft-server:latest
+    container_name: minecraft
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    ports:
+      - "25565:25565"
+    environment:
+      EULA: "TRUE"
+      TYPE: "PAPER"
+      VERSION: "1.21.4"
+      MEMORY: "3G"
+      USE_AIKAR_FLAGS: "TRUE"
+      DIFFICULTY: "normal"
+      MAX_PLAYERS: "10"
+      MOTD: "Tulio's Homelab Server"
+      OPS: "tuliosun0402"
+      ENABLE_RCON: "true"
+      RCON_PASSWORD: ${RCON_PASSWORD}
+      TZ: "Asia/Taipei"
+    mem_limit: 4g
+    volumes:
+      - mc_data:/data
+
+volumes:
+  mc_data:
